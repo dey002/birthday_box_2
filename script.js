@@ -17,7 +17,7 @@ window.onload = function () {
       // Check if it's the step where you want to play the video
       if (step === 3) {
         // Set a timeout to show the confirmation dialog after 5 seconds
-        setTimeout(displayConfirmation, 5000);
+        setTimeout(displayConfirmation, 10000);
       }
   
       if (step === 4) {
@@ -34,7 +34,7 @@ window.onload = function () {
   
     function displayConfirmation() {
       // Show a confirmation dialog
-      var userConfirmation = confirm("Do you want to play the video in full-screen mode?");
+      var userConfirmation = confirm("Here's another surprise.....");
       if (userConfirmation) {
         // User clicked OK, play the video
         playVideo();
