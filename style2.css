@@ -1,0 +1,683 @@
+html, body, .container {
+	height: 100%;
+}
+
+body {
+	background: #e74c3c;
+	overflow: hidden;
+}
+.merrywrap{
+  position: absolute;
+  right: 30px;
+  left: 30px;
+  bottom: 30px;
+  top: 30px;
+   background:
+    radial-gradient(circle at 0 0, white 10%, transparent 11%),
+    radial-gradient(circle at 3px 3px, white 10%, transparent 11%);
+  background-size: 20px 20px; /* Set the background size for larger dots */
+  background-position: 0 0, 10px 10px; /* Adjust the position if needed */
+}
+.giftbox{
+  position: absolute;
+  width:300px;
+  height:200px;
+  left:50%;
+  margin-left: -150px;
+  bottom: 0;
+  z-index:10;
+  &>div{
+    background: #34495e;
+    position: absolute;
+    &:after,&:before{
+      position: absolute;
+      content:"";
+      top: 0;
+    }
+  }
+  &:after{
+    position: absolute;
+    color:#fff;
+    width:100%;
+    content:"Click Me!";
+    left: 0;
+    bottom: 0;
+    font-size: 24px;
+    text-align: center;
+    transform:rotate(-20deg);
+    transform-origin:0 0;
+  }
+  .cover{
+    width:100%;
+    top: 0;
+    left: 0;
+    height:25%;
+    z-index:2;
+    &:before{
+      position: absolute;
+      height:100%;
+      left: 50%;
+      width:50px;  transform:translateX(-50%);
+      background:#fdc56d;
+    }
+    &>div{
+      position: absolute;
+      width:50px;
+      height:50px;
+      left:50%;
+      top:-50px; transform:translateX(-50%);
+      &:before,&:after{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content:"";
+        box-shadow:inset 0 0 0 15px #fdc56d;
+        border-radius:30px;
+        transform-origin:50% 100%;
+      }
+      &:before{
+        transform:translateX(-45%) skewY(40deg);
+      }
+      &:after{   transform:translateX(45%) skewY(-40deg);
+      }
+    }
+  }
+  .box{
+    right:5%;
+    left:5%;
+    height:80%;
+    bottom: 0;
+    &:before{ 
+      width:50px;
+      height:100%;
+      left:50%;
+      transform:translateX(-50%);
+      background:#fdc56d;
+    }
+    &:after{
+      width:100%;
+      height:30px;
+      background:rgba(0,0,0,0.2);
+    }
+  }
+}
+.icons{
+  position:absolute;
+  left: 0; 
+  top:50%;
+  width: 100%;
+  height: auto; 
+  transform:translateY(-50%); 
+  .row{
+    width:100%;
+    text-align: center; 
+    span{ 
+      color: #fff;
+	    text-shadow: 5px 5px 0 #ca3121;
+      font-size: 35px;   
+      display: inline-block;
+      opacity:0;
+      transition: transform 0.5s ease-in, opacity 0.7s;
+    }
+  } 
+}
+.step-1{
+  .giftbox{
+    animation:wobble 0.5s linear infinite forwards;
+  }
+  .cover{
+     animation:wobble 0.5s linear infinite  0.1s forwards;
+  }
+  .icons .row span{
+    opacity:1;
+  }
+}
+.step-2 .giftbox:after{
+  opacity:0;
+}
+.step-3 .giftbox,
+.step-4 .giftbox{
+	opacity: 0;
+  z-index:1;
+  &:after{
+    opacity:0;
+  }
+}
+.step-2{
+  .giftbox{
+    .cover{
+      animation:flyUp 0.4s ease-in forwards;
+    }
+    .box{
+      animation:flyDown 0.2s ease-in 0.05s forwards;
+    }
+  }
+}
+@keyframes wobble{
+  25%{
+    transform:rotate(4deg);
+  }
+  75%{
+    transform:rotate(-2deg);
+  }
+}
+@keyframes flyUp{
+  75%{
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-1000px) rotate(20deg);
+    opacity:0;
+  }
+}
+@keyframes flyDown {
+    75% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  .step-1 .icons .row span {
+    opacity: 0;
+  }
+  
+  .step-1 .icons .row span:nth-child(1) {
+    transform: translateY(700%) translateX(600%);
+  }
+  
+  .step-1 .icons .row span:nth-child(2) {
+    transform: translateY(700%) translateX(500%);
+  }
+  
+  .step-1 .icons .row span:nth-child(3) {
+    transform: translateY(700%) translateX(400%);
+  }
+  
+  .step-1 .icons .row span:nth-child(4) {
+    transform: translateY(700%) translateX(300%);
+  }
+  
+  .step-1 .icons .row span:nth-child(5) {
+    transform: translateY(700%) translateX(200%);
+  }
+  
+  .step-1 .icons .row span:nth-child(6) {
+    transform: translateY(700%) translateX(100%);
+  }
+  
+  .step-1 .icons .row span:nth-child(7) {
+    transform: translateY(700%) translateX(0);
+  }
+  
+  .step-1 .icons .row span:nth-child(8) {
+    transform: translateY(700%) translateX(-100%);
+  }
+  
+  .step-1 .icons .row span:nth-child(9) {
+    transform: translateY(700%) translateX(-200%);
+  }
+  
+  .step-1 .icons .row span:nth-child(10) {
+    transform: translateY(700%) translateX(-300%);
+  }
+  
+  .step-1 .icons .row span:nth-child(11) {
+    transform: translateY(700%) translateX(-400%);
+  }
+  
+  .step-1 .icons .row span:nth-child(12) {
+    transform: translateY(700%) translateX(-500%);
+  }
+  
+  .step-1 .icons .row span:nth-child(13) {
+    transform: translateY(700%) translateX(-600%);
+  }
+  /* Continue this pattern for the remaining span elements (14 to 44) */
+.step-1 .icons .row span:nth-child(14) {
+    transform: translateY(700%) translateX(-700%);
+  }
+  
+  .step-1 .icons .row span:nth-child(15) {
+    transform: translateY(700%) translateX(-800%);
+  }
+  
+  .step-1 .icons .row span:nth-child(16) {
+    transform: translateY(700%) translateX(-900%);
+  }
+  
+  .step-1 .icons .row span:nth-child(17) {
+    transform: translateY(700%) translateX(-1000%);
+  }
+  
+  .step-1 .icons .row span:nth-child(18) {
+    transform: translateY(700%) translateX(-1100%);
+  }
+  
+  .step-1 .icons .row span:nth-child(19) {
+    transform: translateY(700%) translateX(-1200%);
+  }
+  
+  .step-1 .icons .row span:nth-child(20) {
+    transform: translateY(700%) translateX(-1300%);
+  }
+  
+  .step-1 .icons .row span:nth-child(21) {
+    transform: translateY(700%) translateX(-1400%);
+  }
+  
+  .step-1 .icons .row span:nth-child(22) {
+    transform: translateY(700%) translateX(-1500%);
+  }
+  
+  .step-1 .icons .row span:nth-child(23) {
+    transform: translateY(700%) translateX(-1600%);
+  }
+  
+  .step-1 .icons .row span:nth-child(24) {
+    transform: translateY(700%) translateX(-1700%);
+  }
+  
+  .step-1 .icons .row span:nth-child(25) {
+    transform: translateY(700%) translateX(-1800%);
+  }
+  
+  .step-1 .icons .row span:nth-child(26) {
+    transform: translateY(700%) translateX(-1900%);
+  }
+  
+  .step-1 .icons .row span:nth-child(27) {
+    transform: translateY(700%) translateX(-2000%);
+  }
+  
+  .step-1 .icons .row span:nth-child(28) {
+    transform: translateY(700%) translateX(-2100%);
+  }
+  
+  .step-1 .icons .row span:nth-child(29) {
+    transform: translateY(700%) translateX(-2200%);
+  }
+  
+  .step-1 .icons .row span:nth-child(30) {
+    transform: translateY(700%) translateX(-2300%);
+  }
+  
+  .step-1 .icons .row span:nth-child(31) {
+    transform: translateY(700%) translateX(-2400%);
+  }
+  
+  .step-1 .icons .row span:nth-child(32) {
+    transform: translateY(700%) translateX(-2500%);
+  }
+  
+  .step-1 .icons .row span:nth-child(33) {
+    transform: translateY(700%) translateX(-2600%);
+  }
+  
+  .step-1 .icons .row span:nth-child(34) {
+    transform: translateY(700%) translateX(-2700%);
+  }
+  
+  .step-1 .icons .row span:nth-child(35) {
+    transform: translateY(700%) translateX(-2800%);
+  }
+  
+  .step-1 .icons .row span:nth-child(36) {
+    transform: translateY(700%) translateX(-2900%);
+  }
+  
+  .step-1 .icons .row span:nth-child(37) {
+    transform: translateY(700%) translateX(-3000%);
+  }
+  
+  .step-1 .icons .row span:nth-child(38) {
+    transform: translateY(700%) translateX(-3100%);
+  }
+  
+  .step-1 .icons .row span:nth-child(39) {
+    transform: translateY(700%) translateX(-3200%);
+  }
+  
+  .step-1 .icons .row span:nth-child(40) {
+    transform: translateY(700%) translateX(-3300%);
+  }
+  
+  .step-1 .icons .row span:nth-child(41) {
+    transform: translateY(700%) translateX(-3400%);
+  }
+  
+  .step-1 .icons .row span:nth-child(42) {
+    transform: translateY(700%) translateX(-3500%);
+  }
+  
+  .step-1 .icons .row span:nth-child(43) {
+    transform: translateY(700%) translateX(-3600%);
+  }
+  
+  .step-1 .icons .row span:nth-child(44) {
+    transform: translateY(700%) translateX(-3700%);
+  }
+  
+
+
+  
+/* Continue this pattern for the remaining span elements (2 to 44) in step-2 */
+.step-2 .icons .row span:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.step-2 .icons .row span:nth-child(3) {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+.step-2 .icons .row span:nth-child(4) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.step-2 .icons .row span:nth-child(5) {
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.step-2 .icons .row span:nth-child(6) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.step-2 .icons .row span:nth-child(7) {
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+
+.step-2 .icons .row span:nth-child(8) {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.step-2 .icons .row span:nth-child(9) {
+  -webkit-transition-delay: 0.45s;
+  transition-delay: 0.45s;
+}
+
+.step-2 .icons .row span:nth-child(10) {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.step-2 .icons .row span:nth-child(11) {
+  -webkit-transition-delay: 0.55s;
+  transition-delay: 0.55s;
+}
+
+.step-2 .icons .row span:nth-child(12) {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.step-2 .icons .row span:nth-child(13) {
+  -webkit-transition-delay: 0.65s;
+  transition-delay: 0.65s;
+}
+
+/* Continue this pattern for the remaining span elements (14 to 44) in step-2 */
+.step-2 .icons .row span:nth-child(14) {
+  -webkit-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+
+.step-2 .icons .row span:nth-child(15) {
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+}
+
+/* Continue this pattern for the remaining span elements (16 to 44) in step-2 */
+.step-2 .icons .row span:nth-child(16) {
+    -webkit-transition-delay: 0.8s;
+    transition-delay: 0.8s;
+  }
+  
+  .step-2 .icons .row span:nth-child(17) {
+    -webkit-transition-delay: 0.85s;
+    transition-delay: 0.85s;
+  }
+  
+  .step-2 .icons .row span:nth-child(18) {
+    -webkit-transition-delay: 0.9s;
+    transition-delay: 0.9s;
+  }
+  
+  .step-2 .icons .row span:nth-child(19) {
+    -webkit-transition-delay: 0.95s;
+    transition-delay: 0.95s;
+  }
+  
+  .step-2 .icons .row span:nth-child(20) {
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+  }
+  
+  .step-2 .icons .row span:nth-child(21) {
+    -webkit-transition-delay: 1.05s;
+    transition-delay: 1.05s;
+  }
+  
+  .step-2 .icons .row span:nth-child(22) {
+    -webkit-transition-delay: 1.1s;
+    transition-delay: 1.1s;
+  }
+  
+  .step-2 .icons .row span:nth-child(23) {
+    -webkit-transition-delay: 1.15s;
+    transition-delay: 1.15s;
+  }
+  
+  .step-2 .icons .row span:nth-child(24) {
+    -webkit-transition-delay: 1.2s;
+    transition-delay: 1.2s;
+  }
+  
+  .step-2 .icons .row span:nth-child(25) {
+    -webkit-transition-delay: 1.25s;
+    transition-delay: 1.25s;
+  }
+  
+  .step-2 .icons .row span:nth-child(26) {
+    -webkit-transition-delay: 1.3s;
+    transition-delay: 1.3s;
+  }
+  
+  .step-2 .icons .row span:nth-child(27) {
+    -webkit-transition-delay: 1.35s;
+    transition-delay: 1.35s;
+  }
+  
+  .step-2 .icons .row span:nth-child(28) {
+    -webkit-transition-delay: 1.4s;
+    transition-delay: 1.4s;
+  }
+  
+  .step-2 .icons .row span:nth-child(29) {
+    -webkit-transition-delay: 1.45s;
+    transition-delay: 1.45s;
+  }
+  
+  .step-2 .icons .row span:nth-child(30) {
+    -webkit-transition-delay: 1.5s;
+    transition-delay: 1.5s;
+  }
+  
+  .step-2 .icons .row span:nth-child(31) {
+    -webkit-transition-delay: 1.55s;
+    transition-delay: 1.55s;
+  }
+  
+  .step-2 .icons .row span:nth-child(32) {
+    -webkit-transition-delay: 1.6s;
+    transition-delay: 1.6s;
+  }
+  
+  .step-2 .icons .row span:nth-child(33) {
+    -webkit-transition-delay: 1.65s;
+    transition-delay: 1.65s;
+  }
+  
+  .step-2 .icons .row span:nth-child(34) {
+    -webkit-transition-delay: 1.7s;
+    transition-delay: 1.7s;
+  }
+  
+  .step-2 .icons .row span:nth-child(35) {
+    -webkit-transition-delay: 1.75s;
+    transition-delay: 1.75s;
+  }
+  
+  .step-2 .icons .row span:nth-child(36) {
+    -webkit-transition-delay: 1.8s;
+    transition-delay: 1.8s;
+  }
+  
+  .step-2 .icons .row span:nth-child(37) {
+    -webkit-transition-delay: 1.85s;
+    transition-delay: 1.85s;
+  }
+  
+  .step-2 .icons .row span:nth-child(38) {
+    -webkit-transition-delay: 1.9s;
+    transition-delay: 1.9s;
+  }
+  
+  .step-2 .icons .row span:nth-child(39) {
+    -webkit-transition-delay: 1.95s;
+    transition-delay: 1.95s;
+  }
+  
+  .step-2 .icons .row span:nth-child(40) {
+    -webkit-transition-delay: 2s;
+    transition-delay: 2s;
+  }
+  
+  .step-2 .icons .row span:nth-child(41) {
+    -webkit-transition-delay: 2.05s;
+    transition-delay: 2.05s;
+  }
+  
+  .step-2 .icons .row span:nth-child(42) {
+    -webkit-transition-delay: 2.1s;
+    transition-delay: 2.1s;
+  }
+  
+  .step-2 .icons .row span:nth-child(43) {
+    -webkit-transition-delay: 2.15s;
+    transition-delay: 2.15s;
+  }
+  
+  .step-2 .icons .row span:nth-child(44) {
+    -webkit-transition-delay: 2.2s;
+    transition-delay: 2.2s;
+  }
+  
+
+
+
+/* Apply opacity and transition timing function to all 44 span child elements in step-2 */
+.step-2 .icons span,
+.step-3 .icons span,
+.step-4 .icons span {
+  opacity: 0.7;
+  transition-timing-function: cubic-bezier(0.000, 0.000, 0.200, 0.910);
+}
+
+/* Apply wobble animation to all span child elements in step-4 and step-3 */
+.step-4 .icons .row span,
+.step-3 .icons .row span {
+  animation: wobble 0.6s linear infinite forwards;
+}
+
+/* Apply animation duration to even span child elements in step-4 and step-3 */
+.step-4 .icons .row span:nth-child(even),
+.step-3 .icons .row span:nth-child(even) {
+  animation-duration: 0.7s;
+}
+
+.step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(3) {
+    animation-duration: 0.7s;
+  }
+  
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(5) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(7) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(9) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(11) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(13) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(15) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(17) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(19) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(21) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(23) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(25) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(27) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(29) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(31) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(33) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(35) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(37) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(39) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(3), .step-3 .icons .row span:nth-child(41) {
+    animation-duration: 0.7s;
+  }
+  .step-4 .icons .row span:nth-child(43), .step-3 .icons .row span:nth-child(43) {
+    animation-duration: 0.7s;
+  }
+  
+  .step-4 .icons .row span:nth-child(45), .step-3 .icons .row span:nth-child(45) {
+    animation-duration: 0.7s;
+  }
+
+ /* Change opacity to solid after the animation for all child elements in step-4 and step-3 */
+.step-4 .icons .row span,
+.step-3 .icons .row span {
+  animation-duration: 0.7s;
+  opacity: 1; /* Change opacity to solid */
+}
