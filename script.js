@@ -17,7 +17,7 @@ window.onload = function () {
       // Check if it's the step where you want to play the video
       if (step === 3) {
         // Set a timeout to show the confirmation dialog after 5 seconds
-        setTimeout(displayConfirmation, 10000);
+        setTimeout(displayConfirmation, 20000);
       }
   
       if (step === 4) {
